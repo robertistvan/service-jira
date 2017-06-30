@@ -6,7 +6,7 @@ eureka:
     hostname: ${HOSTNAME:jira}
   client:
     serviceUrl:
-      defaultZone: http://registry:8761/eureka/
+      defaultZone: http://${REGISTRY_HOST:registry}:8761/eureka/
 
 rp:
   mongo:
@@ -25,4 +25,4 @@ spring:
       host: registry
       discovery:
         hostname: ${HOSTNAME:jira}
-        prefer-ip-address: false
+        prefer-ip-address: ${PREFER_IP:false}
